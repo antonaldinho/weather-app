@@ -8,6 +8,7 @@ const express = require('express');
 const app = express();
 
 const publicDir = path.join(__dirname, 'public');
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(publicDir));
 
@@ -49,6 +50,6 @@ app.get('/weather', function(req, res) {
     }
 })
 
-app.listen(3000, function() {
-    console.log('up and running')
+app.listen(PORT, function() {
+    console.log('up and running in port: ' + PORT);
 })
